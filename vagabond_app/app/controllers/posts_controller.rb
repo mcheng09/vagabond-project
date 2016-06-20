@@ -21,6 +21,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @first_name = @post.user.first_name
     render :show
   end
 
