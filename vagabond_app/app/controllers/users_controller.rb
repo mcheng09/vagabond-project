@@ -29,6 +29,10 @@ class UsersController < ApplicationController
     render :edit
   end
 
+  def posts
+    @posts = User.find(params[:id]).posts
+  end
+
   private
 
   def user_params
