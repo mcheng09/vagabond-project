@@ -19,6 +19,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    @posts = @user.posts
+  end
+
+  def edit
+    @user = User.find(params[:id])
+    render :edit
+  end
+
   private
 
   def user_params
