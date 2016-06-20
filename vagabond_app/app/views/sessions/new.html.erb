@@ -3,16 +3,7 @@ Sign In
 <%= form_for @user, url: "/signin", method: "post" do |form| %>
 
   <div>
-    <%= form.text_field :first_name %>
-  </div>
-  <div>
-    <%= form.text_field :last_name %>
-  </div>
-  <div>
     <%= form.text_field :email %>
-  </div>
-  <div>
-    <%= form.text_field :location %>
   </div>
   <div>
     <%= form.password_field :password %>
