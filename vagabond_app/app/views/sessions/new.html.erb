@@ -1,0 +1,17 @@
+Sign In
+
+<%= form_for @user, url: "/signin", method: "post" do |form| %>
+
+  <div>
+    <%= form.text_field :email %>
+  </div>
+  <div>
+    <%= form.password_field :password %>
+  </div>
+
+
+  <div>
+    <%= form.submit "Sign In" %>
+  </div>
+
+<% end %>
