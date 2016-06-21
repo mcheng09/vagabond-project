@@ -1,15 +1,21 @@
 Rails.application.routes.draw do
+
+# USERS
   resources :users
   get "users/:id/posts", to: "users#posts"
+  get "/", to: "users#index", as: "homepage"
+  get "/users/:id", to: "users#show"
 
+# POSTS
   resources :posts
 
-  get "/", to: "users#index", as: "homepage"
-
+# SESSIONS
   get "/signin", to: "sessions#new", as: "signin"
   post "/sessions", to: "sessions#create"
   delete "/logout", to:"sessions#delete"
 
-  get "/users/:id", to: "users#show"
+# CITIES
+  get "/cities", to: "cities#index"
+
 
 end
