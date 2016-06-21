@@ -1,0 +1,7 @@
+<h1><%= @city.name %></h1>
+Country: <%= @city.country %> </br></br>
+Description: <%= @city.description %></br></br>
+Posts:
+<% @posts.each do |post| %>
+<%= post.description %></br>
+<% end %>
