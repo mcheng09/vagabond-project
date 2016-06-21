@@ -4,14 +4,20 @@
 
 <%= image_tag(@user.avatar) %>
 <div>
-<b>Name:</b> <%= @user.first_name %> <%= @user.last_name %>
+  <b>Name:</b> <%= @user.first_name %> <%= @user.last_name %>
 </div>
 
 <div>
- Location: <%= @user.location %>
+  <b>Location:</b> <%= @user.location %>
 </div>
+
 <div>
- <b>Recent Posts:</b> <%   @posts.each do |post| %>
+  <b>User Since:</b> <%= @user.created_at.strftime("%d %b. %Y") %>
+</div>
+
+<div>
+ <b>Recent Posts:</b>
+    <% @posts.each do |post| %>
     <%= post.title %>
     <%= post.description %>
   <% end %>
@@ -23,4 +29,3 @@
           <button> Edit Profile </button>
   </form>
 </div>
-
