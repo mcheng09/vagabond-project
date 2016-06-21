@@ -1,20 +1,26 @@
 
 <h1>Profile Page</h1>
-<table>
-  <tr>
-    <td>
-      <img src=""/>
-      <br>
-      <div>
-        Name: <%= @user.first_name %> <%= @user.last_name %><br>
-        Location: <%= @user.location %>
-      </div>
-      <form action='/users/<%= @user.id %>/edit' method='get'>
-          <button> Edit Profile </button>
-        </form>
-    </td>
 
-    <td>
-    </td>
-  <tr>
-</table>
+
+<%= image_tag(@user.avatar) %>
+<div>
+<b>Name:</b> <%= @user.first_name %> <%= @user.last_name %>
+</div>
+
+<div>
+ Location: <%= @user.location %>
+</div>
+<div>
+ <b>Recent Posts:</b> <%   @posts.each do |post| %>
+    <%= post.title %>
+    <%= post.description %>
+  <% end %>
+</div>
+
+
+<div>
+  <form action='/users/<%= @user.id %>/edit' method='get'>
+          <button> Edit Profile </button>
+  </form>
+</div>
+
