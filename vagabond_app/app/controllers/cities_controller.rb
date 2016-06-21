@@ -4,5 +4,8 @@ class CitiesController < ApplicationController
     render :index
   end
 
+  def posts
+    @posts = City.find(params[:id]).posts
+  end
 
 end
