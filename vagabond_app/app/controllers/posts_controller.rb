@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    @user = User.find(params[:id])
     @post = Post.new(post_params)
     if @post.save
       redirect_to posts_path
@@ -19,9 +20,12 @@ class PostsController < ApplicationController
     end
   end
 
+
+
   def show
     @post = Post.find(params[:id])
     @first_name = @post.user.first_name
+    # @user = User.find(params[:id])
     render :show
   end
 

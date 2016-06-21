@@ -1,1 +1,9 @@
 Hello World! Posts Go Here.
+
+<div>
+ <b>Recent Posts:</b><br> <% @post.each do |post| %>
+
+   <%= link_to(post.title, post_path(post.id)) %>
+    <br>
+  <% end %>
+</div>
