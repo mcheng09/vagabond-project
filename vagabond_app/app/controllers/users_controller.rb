@@ -29,10 +29,14 @@ class UsersController < ApplicationController
     render :edit
   end
 
+  def posts
+    @posts = User.find(params[:id]).posts
+  end
+
   private
 
   def user_params
-    params.require(:users).permit(:first_name, :last_name, :email, :password)
+    params.require(:user).permit(:first_name, :last_name, :email, :location, :password)
   end
 
 
