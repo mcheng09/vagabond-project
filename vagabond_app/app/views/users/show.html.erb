@@ -8,7 +8,9 @@
         Name: <%= @user.first_name %> <%= @user.last_name %><br>
         Location: <%= @user.location %>
       </div>
-      <a href="/users/:id/edit"><button>Edit Profile</button></a>
+      <form action='/users/<%= @user.id %>/edit' method='get'>
+          <button> Edit Profile </button>
+        </form>
     </td>
 
     <td>
