@@ -4,4 +4,5 @@ Description: <%= @city.description %></br></br>
 Posts:
 <% @posts.each do |post| %>
 <%= post.description %></br>
+<%= button_to "Delete Post", @post, method: :delete, :data => {:confirm => @confirm_msg} %>
 <% end %>

@@ -23,9 +23,11 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @first_name = @post.user.first_name
+    @confirm_msg = "Are you sure you want to delete #{@post.title} ?"
     # @user = User.find(params[:id])
     render :show
   end
+
 
 
   def edit
@@ -37,6 +39,14 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.update(post_params)
     redirect_to "/posts/#{@post.id}"
+  end
+
+
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
 

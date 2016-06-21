@@ -9,8 +9,11 @@
 <%= @post.description %>
 </div>
 
+
 <div>
   <form action='/posts/<%= @post.id %>/edit' method='get'>
           <button> Edit Profile </button>
   </form>
 </div>
+
+<%= button_to "Delete Post", @post, method: :delete, :data => {:confirm => @confirm_msg} %>
