@@ -11,23 +11,16 @@
 
 <h1>THIS IS THE LAYOUT</h1>
 <div>
-  <button><%= link_to "Log Out", logout_path, method: "delete" %></button>
+  <% if session[:user_id].nil? %>
   <button><%= link_to "User Login", signin_path %></button>
   <button><%= link_to "Sign Up!", new_user_path %></button>
   <button><%= link_to "Homepage", homepage_path %></button>
+  <% else %>
+  <button><%= link_to "Log Out", logout_path, method: "delete" %></button>
+  <% end %>
 </div>
 </br>
 </br>
-
-<%# if logged_in? %>
-  <%#= link_to "Log Out", logout_path, method: :delete %>
-<%# end %>
-
-<%# if logout? %>
-  <%#= link_to "Sign Up", signup_path %>
-  <%#= link_to "Log In", login_path %>
-<%# end %>
-
 
 <%= yield %>
 
