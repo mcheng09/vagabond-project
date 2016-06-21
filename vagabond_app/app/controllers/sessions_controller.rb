@@ -15,6 +15,11 @@ class SessionsController < ApplicationController
     end
   end
 
+  def delete
+    logout
+    redirect_to homepage_path
+  end
+
   private
 
   def user_params
