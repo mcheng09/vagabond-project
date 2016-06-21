@@ -8,3 +8,9 @@
 <div>
 <%= @post.description %>
 </div>
+
+<div>
+  <form action='/posts/<%= @post.id %>/edit' method='get'>
+          <button> Edit Profile </button>
+  </form>
+</div>
