@@ -1,6 +1,9 @@
 <%= form_for @user do |f| %>
 
 <div>
+ <%= f.file_field :avatar %>
+</div>
+<div>
 <%= f.text_field :first_name, placeholder: "First Name" %>
 </div>
 <div>

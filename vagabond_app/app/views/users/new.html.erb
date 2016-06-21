@@ -1,6 +1,10 @@
 <%= form_for @user do |f| %>
 
 <div>
+ <%= f.file_field :avatar %>
+</div>
+<div>
+
 <%= f.text_field :first_name, placeholder: "First Name" %>
 </div>
 <div>
@@ -15,7 +19,13 @@
 <div>
   <%= f.password_field :password, placeholder: "Password" %>
 </div>
+<<<<<<< HEAD
+
+
 <br>
-<%= f.submit "Create Profile" %>
+<%= f.submit "Sign_up" %>
+
+<br>
+
 
 <% end %>
