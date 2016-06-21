@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   delete "/logout", to:"sessions#delete"
 
 # CITIES
-  resources :cities
+  resources :cities do
+    resources :posts
+  end
   get "cities/:id/posts", to: "cities#posts"
 
 
