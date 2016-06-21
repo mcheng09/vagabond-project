@@ -1,0 +1,13 @@
+<%= form_for @post do |f| %>
+
+  <div>
+    <%= f.text_field :title, placeholder: "Title" %>
+  </div>
+  <div>
+    <%= f.text_field :description, placeholder: "Description" %>
+  </div>
+
+  <br>
+  <%= f.submit "Update Post" %>
+
+<% end %>
