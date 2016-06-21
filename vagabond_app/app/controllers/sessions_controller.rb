@@ -5,7 +5,25 @@ class SessionsController < ApplicationController
     render :new
   end
 
-  def login
+  def create
+    @user = User.confirm(user_params)
+    if @user
+      login(@user)
+      redirect_to "/users/#{@user.id}"
+    else
+      redirect_to signin_path
+    end
+  end
+
+  def delete
+    logout
+    redirect_to homepage_path
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:email, :password)
   end
 
 

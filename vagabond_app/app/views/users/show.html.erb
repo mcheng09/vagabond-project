@@ -1,14 +1,20 @@
-<%= image_tag(@user.avatar) %>
-<div>
-<b>First Name:</b> <%= @user.first_name %>
-</div>
-<div>
-<b>Last Name:</b> <%= @user.last_name %>
-</div>
 
-<div>
-<b>Email:</b> <%= @user.email %>
-</div>
-<b>Recent Posts:</b> <%= @posts %>
+<h1>Profile Page</h1>
+<table>
+  <tr>
+    <td>
+      <img src=""/>
+      <br>
+      <div>
+        Name: <%= @user.first_name %> <%= @user.last_name %><br>
+        Location: <%= @user.location %>
+      </div>
+      <form action='/users/<%= @user.id %>/edit' method='get'>
+          <button> Edit Profile </button>
+        </form>
+    </td>
 
-
+    <td>
+    </td>
+  <tr>
+</table>
