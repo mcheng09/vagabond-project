@@ -8,3 +8,5 @@
 <div>
 <%= @post.description %>
 </div>
+
+<%= button_to "Delete Post", @post, method: :delete, :data => {:confirm => @confirm_msg} %>
