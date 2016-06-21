@@ -13,7 +13,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to users_path
+      login(@user)
+      redirect_to "/users/#{@user.id}"
     else
       redirect_to new_user_path
     end
@@ -29,6 +30,12 @@ class UsersController < ApplicationController
     render :edit
   end
 
+  def update
+    @user = User.find(params[:id])
+    redirect_to redirect_to "/users/#{@user.id}"
+  end
+
+
   def posts
     @posts = User.find(params[:id]).posts
   end
@@ -36,7 +43,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:users).permit(:first_name, :last_name, :email, :password)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :avatar)
   end
 
 
