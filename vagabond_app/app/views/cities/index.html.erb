@@ -1,2 +1,7 @@
-Hello World! Cities Go Here.
+Hello World! Cities Go Here. </br>
 
+<% @city.each do |city| %>
+  <a href="/cities/<%= city.id %>">
+    <%= city.name %> </br>
+  </a>
+<% end %>

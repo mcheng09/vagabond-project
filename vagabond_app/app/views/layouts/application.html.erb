@@ -12,6 +12,7 @@
 <h1>THIS IS THE LAYOUT</h1>
 <div>
   <button><%= link_to "Homepage", homepage_path %></button>
+  <button><%= link_to "View Cities", cities_path %></button>
   <% if session[:user_id].nil? %>
   <button><%= link_to "User Login", signin_path %></button>
   <button><%= link_to "Sign Up!", new_user_path %></button>
