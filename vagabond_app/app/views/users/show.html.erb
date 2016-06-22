@@ -4,8 +4,11 @@
 
 <%= image_tag(@user.avatar) %>
 <div>
-  <b>Name:</b> <%= @user.first_name %> <%= @user.last_name %>
+  <b>Name:</b>
+  <a href="/users/<%= @user.id %>"><%= @user.first_name %> <%= @user.last_name %></a>
 </div>
+
+
 
 <div>
   <b>Location:</b> <%= @user.location %>
