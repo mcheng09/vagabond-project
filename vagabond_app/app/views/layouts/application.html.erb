@@ -11,11 +11,12 @@
 
 <h1>THIS IS THE LAYOUT</h1>
 <div>
+  <button><%= link_to "Homepage", homepage_path %></button>
   <% if session[:user_id].nil? %>
   <button><%= link_to "User Login", signin_path %></button>
   <button><%= link_to "Sign Up!", new_user_path %></button>
-  <button><%= link_to "Homepage", homepage_path %></button>
   <% else %>
+  <button><%= link_to "Profile", user_path(current_user[:id]) %></button>
   <button><%= link_to "Log Out", logout_path, method: "delete" %></button>
   <button><%= link_to "Create Post", new_post_path %></button>
   <% end %>
