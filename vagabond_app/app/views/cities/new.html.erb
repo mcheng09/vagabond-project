@@ -1,11 +1,11 @@
-<%= form_for @post, url: "/cities/#{@city.id}/posts" do |f| %>
+<%= form_for @cities do |f| %>
 
-<%= @city.name %>
 <div>
  <%= f.file_field :avatar %>
 </div>
 <div>
-<%= f.text_field :title, placeholder: "Title" %>
+lijmll
+<%= f.text_field :name, placeholder: "Name" %>
 </div>
 <div>
 <%= f.text_field :description, placeholder: "Description" %>

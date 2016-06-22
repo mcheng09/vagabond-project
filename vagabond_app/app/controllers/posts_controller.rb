@@ -1,22 +1,35 @@
 class PostsController < ApplicationController
 
   def index
-    @post = Post.all
+    @posts = Post.all
     render :index
   end
 
   def new
     @post = Post.new
+    @city = City.find_by_id(params[:city_id])
     render :new
   end
 
   def create
-    @post = current_user.posts.build(post_params)
-    if @post.save
-      redirect_to posts_path
+
+    post_params = params[:post]
+    post = Post.new({title: post_params[:title], description: post_params[:description]})
+    # @post = current_user.posts.build(params[:city_id])
+    if post.save
+    city = City.find(params[:city_id])
+    city.posts << post
+    current_user.posts << post
+      if city.save && current_user.save
+
+      redirect_to city_path(city.id)
+      else
+       redirect_to new_city_post_path(city[:id])
+      end
     else
-      redirect_to new_post_path
+      redirect_to new_city_post_path(city[:id])
     end
+
   end
 
 
