@@ -2,8 +2,9 @@
 <h1><%= @city.name %></h1>
 Country: <%= @city.country %> </br></br>
 Description: <%= @city.description %></br></br>
-Posts:
+Posts: </br>
 <% @posts.each do |post| %>
+<a href="/users/<%= post.user_id %>"><%= post.user.first_name %> <%= post.user.last_name %></a></br>
 <%= post.description %></br>
 <%= button_to "Delete Post", city_post_path(@city.id, post.id), method: :delete, :data => {:confirm => @confirm_msg} %>
 <% end %>
