@@ -5,8 +5,10 @@ class CitiesController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
     @city = City.find(params[:id])
     @posts = City.find(params[:id]).posts
+    @confirm_msg = "Are you sure you want to delete #{@post.title} ?"
     render :show
   end
 

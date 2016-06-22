@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @city = City.find_by_id(params[:city_id])
     render :index
   end
 
@@ -59,7 +60,8 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_path
+    city = City.find(params[:city_id])
+    redirect_to city_path(city.id)
   end
 
 
