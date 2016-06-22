@@ -16,4 +16,9 @@
   </form>
 </div>
 
-<%= button_to "Delete Post", @post, method: :delete, :data => {:confirm => @confirm_msg} %>
+<!-- %= @post.city_id %> -->
+<!-- % @post.city.posts.each do |p| %> -->
+  <!-- %= p.id %> <br> -->
+<!-- % end %> -->
+
+<%= button_to "Delete Post", city_post_path(@post.city.id, @post.id), method: :delete, :data => {:confirm => @confirm_msg} %>

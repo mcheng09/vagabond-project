@@ -5,5 +5,5 @@ Description: <%= @city.description %></br></br>
 Posts:
 <% @posts.each do |post| %>
 <%= post.description %></br>
-<%= button_to "Delete Post", @post, method: :delete, :data => {:confirm => @confirm_msg} %>
+<%= button_to "Delete Post", city_post_path(@city.id, post.id), method: :delete, :data => {:confirm => @confirm_msg} %>
 <% end %>
