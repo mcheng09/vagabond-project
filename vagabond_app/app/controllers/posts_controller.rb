@@ -36,10 +36,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @user = User.find(params[:id])
     @first_name = @post.user.first_name
     @confirm_msg = "Are you sure you want to delete #{@post.title} ?"
-    # @user = User.find(params[:id])
     render :show
   end
 
