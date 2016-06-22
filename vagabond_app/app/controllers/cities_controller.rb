@@ -5,6 +5,7 @@ class CitiesController < ApplicationController
   end
 
   def show
+
     @post = Post.find(params[:id])
     @user = User.find(params[:id])
     @city = City.find(params[:id])
