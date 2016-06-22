@@ -20,17 +20,20 @@
     <div class = "navbar-wrapper container">
       <a href="#" class = "brand-logo">Vagabond</a>
 
+      <ul class="right">
       <% if session[:user_id].nil? %>
 
-        <%= link_to "User Login", signin_path %>
-        <%= link_to "Sign Up!", new_user_path %>
+        <li><%= link_to "User Login", signin_path %></li>
+        <li><%= link_to "Sign Up!", new_user_path %></li>
 
       <% else %>
 
-        <%= link_to "Profile", user_path(current_user[:id]) %>
-        <%= link_to "Log Out", logout_path, method: "delete" %>
+        <li><%= link_to "Profile", user_path(current_user[:id]) %></li>
+        <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
 
       <% end %>
+    </ul>
+
     </div>
   </nav>
 
