@@ -1,7 +1,7 @@
 <div>
- <b>Recent Posts:</b><br> <% @post.each do |post| %>
+ <b>Recent Posts:</b><br> <% @posts.each do |post| %>
 
-   <%= link_to(post.title, post_path(post.id)) %>
+   <%= link_to(post.title, city_post_path(post.id)) %>
     <br>
   <% end %>
 </div>
