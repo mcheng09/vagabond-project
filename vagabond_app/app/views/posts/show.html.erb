@@ -14,7 +14,7 @@
       <%= @post.description %>
     </p>
 
-<% if can? :manage, @post %>
+  <% if can? :manage, @post %>
 
     <div>
       <form action='/posts/<%= @post.id %>/edit' method='get'>

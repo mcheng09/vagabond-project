@@ -18,11 +18,15 @@
   </div>
   <br>
 
+  <% if current_user.id == @user.id %>
+
   <div>
     <form action='/users/<%= @user.id %>/edit' method='get'>
-            <button> Edit Profile </button>
+        <button> Edit Profile </button>
     </form>
   </div>
+
+  <% end %>
 
 <div>
  <b>Recent Posts:</b><br>
