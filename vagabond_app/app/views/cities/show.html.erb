@@ -1,21 +1,25 @@
+<div class="container">
+  <button class="btn waves-effect waves-light blue darken-3">
+    <%= link_to "Create Post", new_city_post_path(@city[:id]), {style: "color: white"} %>
+    <i class="material-icons right">send</i>
+  </button>
 
-<button class="btn waves-effect waves-light">
-  <%= link_to "Create Post", new_city_post_path(@city[:id]), {style: "color: white"} %>
-  <i class="material-icons right">send</i>
-</button>
+  <h2><%= @city.name %></h2>
+  <h5>Country: </h5><%= @city.country %> </br></br>
+  <h5>Description: </h5><%= @city.description %></br></br>
+  <h5>Posts: </h5>
+  <% @posts.each do |post| %>
 
-<h2><%= @city.name %></h2>
-Country: <%= @city.country %> </br></br>
-Description: <%= @city.description %></br></br>
-Posts: </br>
-<% @posts.each do |post| %>
+  <i class="tiny material-icons">perm_identity</i><strong><a href="/users/<%= post.user_id %>">  <%= post.user.first_name %> <%= post.user.last_name %></a></strong></br>
+  <i class="tiny material-icons">message</i><strong><a href="/cities/<%= @city.id %>/posts/<%= post.id %>">  <%= post.title %></a></strong></br>
+  <%= truncate(post.description, :length => 1000) %></br><a href="/cities/<%= @city.id %>/posts/<%= post.id %>">See more...</a></br>
+  <br>
 
-<i class="tiny material-icons">perm_identity</i><a href="/users/<%= post.user_id %>">  <%= post.user.first_name %> <%= post.user.last_name %></a></br>
-<i class="tiny material-icons">message</i><a href="/cities/<%= @city.id %>/posts/<%= post.id %>">  <%= post.title %></a></br>
-<%= truncate(post.description, :length => 1000) %></br><a href="/cities/<%= @city.id %>/posts/<%= post.id %>">See more...</a></br>
-<br>
+  <% end %>
 
-<% end %>
+
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+</div>
