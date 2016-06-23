@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 
     @user = User.new(user_params)
     if @user.save
+      flash[:notice] = "Hello, #{@user.first_name}! Welcome to Vagabond!"
       login(@user)
       redirect_to "/users/#{@user.id}"
     else
@@ -36,8 +37,14 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to "/users/#{@user.id}"
+    @user.update_attributes(user_params)
+    if @user.save
+      flash[:notice] = "Profile Updated!"
+      redirect_to "/users/#{@user.id}"
+    else
+      flash[:error] = @user.errors.full_messages.join("---")
+      redirect_to "/users/#{@user.id}/edit"
+    end
   end
 
 
