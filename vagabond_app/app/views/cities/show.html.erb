@@ -4,8 +4,8 @@ Country: <%= @city.country %> </br></br>
 Description: <%= @city.description %></br></br>
 Posts: </br>
 <% @posts.each do |post| %>
-<a href="/users/<%= post.user_id %>"><%= post.user.first_name %> <%= post.user.last_name %></a></br>
-<a href="/cities/<%= @city.id %>/posts/<%= post.id %>"><%= post.title %></a> </br>
-<%= truncate(post.description, :length => 1000) %></br>
-<%= button_to "Delete Post", city_post_path(@city.id, post.id), method: :delete, :data => {:confirm => @confirm_msg} %>
+<label>User:</label> <a href="/users/<%= post.user_id %>"><%= post.user.first_name %> <%= post.user.last_name %></a></br>
+<label>Title:</label> <a href="/cities/<%= @city.id %>/posts/<%= post.id %>"><%= post.title %></a></br> 
+<%= truncate(post.description, :length => 1000) %></br><a href="/cities/<%= @city.id %>/posts/<%= post.id %>">See more...</a></br>
+<%= button_to "Delete Post", city_post_path(@city.id, post.id), method: :delete, :data => {:confirm => @confirm_msg} %> </br>
 <% end %>
