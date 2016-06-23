@@ -24,6 +24,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Upload images to your app
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
+# Authorization
+gem 'cancancan', '~> 1.10'
+
+
 
 # Use ActiveModel has_secure_password
 
