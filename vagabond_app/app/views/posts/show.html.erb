@@ -18,13 +18,6 @@
     </form>
   </div>
 
-  <!-- %= @post.city_id %> -->
-  <!-- % @post.city.posts.each do |p| %> -->
-    <!-- %= p.id %> <br> -->
-    <!-- % end %> -->
-
-
-  <!-- <%= button_to "Edit Post", city_post_path(@post.city.id, @post.id), method: :get %> -->
 
   <%= button_to "Delete Post", city_post_path(@post.city.id, @post.id), method: :delete, :data => {:confirm => @confirm_msg} %>
 
