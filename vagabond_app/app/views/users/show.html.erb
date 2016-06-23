@@ -21,8 +21,8 @@
 <div>
  <b>Recent Posts:</b><br>
     <% @posts.each do |post| %>
-    <%= post.title %></br>
-    <%= truncate(post.description, :length => 1000) %>
+    <label>title: </label><%= post.title %></br>
+    <%= truncate(post.description, :length => 1000) %></br></br>
   <% end %>
 </div>
 
