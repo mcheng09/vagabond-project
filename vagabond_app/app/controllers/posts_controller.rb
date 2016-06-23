@@ -38,8 +38,8 @@ class PostsController < ApplicationController
 
 
   def show
-    @city = 1
     @post = Post.find(params[:id])
+    @city = @post.city_id
     @first_name = @post.user.first_name
     @confirm_msg = "Are you sure you want to delete #{@post.title} ?"
     render :show

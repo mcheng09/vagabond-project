@@ -15,12 +15,6 @@ Posts: </br>
 <%= truncate(post.description, :length => 1000) %></br><a href="/cities/<%= @city.id %>/posts/<%= post.id %>">See more...</a></br>
 <br>
 
-<button class="btn waves-effect waves-light red">
-  <%= button_to "Delete", city_post_path(@city.id, post.id), method: :delete, :data => {:confirm => @confirm_msg} %>
-   <i class="material-icons right">delete</i>
-</button>
-<br>
-<br>
-
-
 <% end %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
