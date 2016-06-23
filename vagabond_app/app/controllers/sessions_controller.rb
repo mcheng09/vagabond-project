@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.confirm(user_params)
     if @user
+      flash[:notice] = "Welcome back #{@user.first_name}"
       login(@user)
       redirect_to "/users/#{@user.id}"
     else
