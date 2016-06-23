@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "/users/:id", to: "users#show"
 
 # POSTS
-  # resources :posts
+  resources :posts
 
 # SESSIONS
   get "/signin", to: "sessions#new", as: "signin"
