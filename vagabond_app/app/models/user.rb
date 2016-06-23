@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_secure_password
 
-  has_attached_file :avatar, styles: { large: "400x400>", medium: "300x300>", thumb: "100x100>" }, default_url: "Ben.jpeg"
+  has_attached_file :avatar, styles: { large: "300x300>", medium: "200x200>", thumb: "100x100>" }, default_url: "Ben.jpeg"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   validates :first_name, presence: true
   validates :last_name, presence: true
