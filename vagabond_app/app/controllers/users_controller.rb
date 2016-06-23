@@ -13,14 +13,15 @@ class UsersController < ApplicationController
   def create
 
     @user = User.new(user_params)
-    if @user.save
-      login(@user)
-      redirect_to "/users/#{@user.id}"
-    else
-      flash[:error] = @user.errors.full_messages.join("-----")
-      redirect_to new_user_path
+      if @user.save
+        UserMailer.welcome_email(@user).deliver_later
+        login(@user)
+        redirect_to "/users/#{@user.id}"
+      else
+        flash[:error] = @user.errors.full_messages.join("-----")
+        redirect_to new_user_path
+      
     end
-
   end
 
   def show
