@@ -1,11 +1,26 @@
-<button><%= link_to "Create Post", new_city_post_path(@city[:id]) %></button>
-<h1><%= @city.name %></h1>
+
+<button class="btn waves-effect waves-light">
+  <%= link_to "Create Post", new_city_post_path(@city[:id]), {style: "color: white"} %>
+  <i class="material-icons right">send</i>
+</button>
+
+<h2><%= @city.name %></h2>
 Country: <%= @city.country %> </br></br>
 Description: <%= @city.description %></br></br>
 Posts: </br>
 <% @posts.each do |post| %>
-<label>User:</label> <a href="/users/<%= post.user_id %>"><%= post.user.first_name %> <%= post.user.last_name %></a></br>
-<label>Title:</label> <a href="/cities/<%= @city.id %>/posts/<%= post.id %>"><%= post.title %></a></br>
+
+<i class="tiny material-icons">perm_identity</i><a href="/users/<%= post.user_id %>">  <%= post.user.first_name %> <%= post.user.last_name %></a></br>
+<i class="tiny material-icons">message</i><a href="/cities/<%= @city.id %>/posts/<%= post.id %>">  <%= post.title %></a></br>
 <%= truncate(post.description, :length => 1000) %></br><a href="/cities/<%= @city.id %>/posts/<%= post.id %>">See more...</a></br>
-<%= button_to "Delete Post", city_post_path(@city.id, post.id), method: :delete, :data => {:confirm => @confirm_msg} %> </br>
+<br>
+
+<button class="btn waves-effect waves-light red">
+  <%= button_to "Delete", city_post_path(@city.id, post.id), method: :delete, :data => {:confirm => @confirm_msg} %>
+   <i class="material-icons right">delete</i>
+</button>
+<br>
+<br>
+
+
 <% end %>
