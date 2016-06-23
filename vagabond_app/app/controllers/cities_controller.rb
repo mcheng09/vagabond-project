@@ -11,6 +11,7 @@ class CitiesController < ApplicationController
     @city = City.find(params[:id])
     @posts = City.find(params[:id]).posts
     @confirm_msg = "Are you sure you want to delete #{@post.title} ?"
+    @comment = Comment.all
     render :show
   end
 
@@ -19,6 +20,20 @@ class CitiesController < ApplicationController
     @city = City.find(params[:id])
   end
 
+  # def comment
+
+  # end
+  def create_comment
+    @comment = Comment.new(comment_params)
+
+    if @comment.save
+      flash[:success] = 'Your comment was successfully added!'
+
+      redirect_to root_path
+    else
+      render 'new'
+    end
+  end
 
   #   def create
   #   @post = .posts.build(cities_params)

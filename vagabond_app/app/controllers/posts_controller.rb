@@ -39,6 +39,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @first_name = @post.user.first_name
     @confirm_msg = "Are you sure you want to delete #{@post.title} ?"
+    @comments = @post.comments
     render :show
   end
 

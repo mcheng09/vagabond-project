@@ -5,7 +5,28 @@ Description: <%= @city.description %></br></br>
 Posts: </br>
 <% @posts.each do |post| %>
 <label>User:</label> <a href="/users/<%= post.user_id %>"><%= post.user.first_name %> <%= post.user.last_name %></a></br>
-<label>Title:</label> <a href="/cities/<%= @city.id %>/posts/<%= post.id %>"><%= post.title %></a></br> 
+<label>Title:</label> <a href="/cities/<%= @city.id %>/posts/<%= post.id %>"><%= post.title %></a></br>
 <%= truncate(post.description, :length => 1000) %></br><a href="/cities/<%= @city.id %>/posts/<%= post.id %>">See more...</a></br>
+
+<%= form_for [@post, Comment.new] do |f| %>
+
+<div>
+<%= f.text_field :title, placeholder: "Title" %>
+</div>
+<div>
+<%= f.text_field :body, placeholder: "Body" %>
+</div>
+
+<br>
+<%= f.submit "Add Comment" %>
+<br>
+<% end %>
+
+  <% @comment.each do |comment| %>
+    <p>
+        <%= comment.title %> - <%= time_ago_in_words comment.created_at %> ago by <strong><%= comment.body %></strong>
+    </p>
+  <% end %>
+
 <%= button_to "Delete Post", city_post_path(@city.id, post.id), method: :delete, :data => {:confirm => @confirm_msg} %> </br>
 <% end %>
