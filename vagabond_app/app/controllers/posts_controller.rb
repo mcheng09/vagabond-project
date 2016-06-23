@@ -22,9 +22,11 @@ class PostsController < ApplicationController
     city.posts << post
     current_user.posts << post
       if city.save && current_user.save
+        flash[:notice] = "Post created!"
 
       redirect_to city_path(city.id)
       else
+        flash[:error] = post.errors.full_messages.join("-----")
        redirect_to new_city_post_path
       end
     else
@@ -60,8 +62,9 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
     city = City.find(params[:city_id])
+    @post.destroy
+    flash[:notice] = "'#{@post.title}' post was deleted"
     redirect_to city_path(city.id)
   end
 
