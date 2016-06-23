@@ -22,6 +22,7 @@
  <b>Recent Posts:</b><br>
     <% @posts.each do |post| %>
     <label>title: </label><%= post.title %></br>
+    <label>Posted in: </label><a href="/cities/<%= post.city_id %>"> <%= post.city.name %></a></br>
     <%= truncate(post.description, :length => 1000) %></br></br>
   <% end %>
 </div>
@@ -31,3 +32,5 @@
           <button> Edit Profile </button>
   </form>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
