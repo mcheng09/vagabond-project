@@ -1,7 +1,11 @@
-<div>
- <b>Recent Posts:</b><br> <% @posts.each do |post| %>
+<div class="card-panel">
+  <h4 class="card-panel green lighten-1 white-text">Recent Posts</h4>
 
-   <%= link_to(post.title, city_post_path(@city.id, post.id)) %>
-    <br>
-  <% end %>
+  <ul>
+    <li>
+      <% @posts.each do |post| %>
+        <%= link_to(post.title, city_post_path(@city.id, post.id)) %><br>
+      <% end %>
+    </li>
+  </ul>
 </div>
