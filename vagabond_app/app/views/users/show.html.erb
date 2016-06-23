@@ -19,13 +19,12 @@
 </div>
 
 <div>
- <b>Recent Posts:</b>
+ <b>Recent Posts:</b><br>
     <% @posts.each do |post| %>
-    <%= post.title %>
-    <%= post.description %>
+    <%= post.title %></br>
+    <%= truncate(post.description, :length => 1000) %>
   <% end %>
 </div>
-
 
 <div>
   <form action='/users/<%= @user.id %>/edit' method='get'>
