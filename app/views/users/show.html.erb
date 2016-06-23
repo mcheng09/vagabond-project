@@ -1,0 +1,39 @@
+<div class="container">
+  <h3><%= @user.first_name %>'s Profile</h3>
+
+
+  <%= image_tag(@user.avatar) %>
+  <div>
+    <strong>Name: </strong><%= @user.first_name %> <%= @user.last_name %>
+  </div>
+
+
+
+  <div>
+    <b>Location:</b> <%= @user.location %>
+  </div>
+
+  <div>
+    <b>User Since:</b> <%= @user.created_at.strftime("%b %d, %Y") %>
+  </div>
+  <br>
+
+  <div>
+    <form action='/users/<%= @user.id %>/edit' method='get'>
+            <button> Edit Profile </button>
+    </form>
+  </div>
+
+<div>
+ <b>Recent Posts:</b><br>
+    <% @posts.each do |post| %>
+    <label>title: </label><%= post.title %></br>
+    <label>Posted in: </label><a href="/cities/<%= post.city_id %>"> <%= post.city.name %></a></br>
+    <%= truncate(post.description, :length => 1000) %></br></br>
+  <% end %>
+</div>
+
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>

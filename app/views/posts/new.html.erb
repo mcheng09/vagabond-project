@@ -1,0 +1,24 @@
+<div class="card-panel">
+  <%= form_for @post, url: "/cities/#{@city.id}/posts" do |f| %>
+
+  <h4 class="card-panel green lighten-1 white-text"><%= @city.name %></h4>
+  <div>
+  <%= f.file_field :avatar %>
+  </div>
+  <div>
+  <%= f.text_field :title, placeholder: "Title" %>
+  </div>
+  <div>
+  <%= f.text_field :description, placeholder: "Description" %>
+  </div>
+
+
+  <br>
+  <%= f.submit "Create Post" %>
+  <br>
+
+
+  <% end %>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>

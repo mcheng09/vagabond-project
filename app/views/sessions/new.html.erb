@@ -1,0 +1,19 @@
+Sign In
+
+<%= form_for @user, url: "/sessions", method: "post" do |form| %>
+
+  <div>
+    <%= form.text_field :email %>
+  </div>
+  <div>
+    <%= form.password_field :password %>
+  </div>
+
+
+  <div>
+    <%= form.submit "Sign In" %>
+  </div>
+
+<% end %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
