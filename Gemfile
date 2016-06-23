@@ -36,7 +36,7 @@ gem 'paperclip', '~> 4.3', '>= 4.3.6'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug'
-  gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+
 end
 
 group :development do
@@ -50,3 +50,4 @@ end
 group :production do
   gem 'rails_12factor'
 end
+  gem 'bcrypt', '~> 3.1', '>= 3.1.11'
