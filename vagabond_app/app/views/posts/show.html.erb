@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <div class="container">
   <div class="card-panel">
     <div class="header card-panel green lighten-1 content white-text">
@@ -10,15 +10,7 @@
     </div>
     <p class="flow-text white black-text">
       <%= @post.description %>
-=======
-<div class="card-panel">
-  <div class="header card-panel green lighten-1 content white-text">
-    <h4><%= @post.title %></h4>
-    <p>
-      <strong>by <a class="blue-text text-darken-3" href="/users/<%= @post.user_id %>"><%= @post.user.first_name %> <%= @post.user.last_name %></a></br>
-        <a href="/cities/<%= @post.city_id %>"> <%= @post.city.name %> </a></br>
-      <%= @post.created_at.strftime("%b %d, %Y") %></strong>
->>>>>>> master
+
     </p>
 
 
@@ -28,13 +20,6 @@
       </form>
     </div>
 
-    <!-- %= @post.city_id %> -->
-    <!-- % @post.city.posts.each do |p| %> -->
-      <!-- %= p.id %> <br> -->
-      <!-- % end %> -->
-
-
-    <!-- <%= button_to "Edit Post", city_post_path(@post.city.id, @post.id), method: :get %> -->
 
     <%= button_to "Delete Post", city_post_path(@post.city.id, @post.id), method: :delete, :data => {:confirm => @confirm_msg} %>
 
