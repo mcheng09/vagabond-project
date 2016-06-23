@@ -5,6 +5,9 @@
       <h4><%= @post.title %></h4>
       <p>
         <i class="tiny material-icons">perm_identity</i><strong><a class="blue-text text-darken-3" href="/users/<%= @post.user_id %>"> <%= @post.user.first_name %> <%= @post.user.last_name %></a></br>
+
+        <a href="/cities/<%= @post.city_id %>"> <%= @post.city.name %> </a></br>
+
         <%= @post.created_at.strftime("%b %d, %Y") %></strong>
       </p>
     </div>
