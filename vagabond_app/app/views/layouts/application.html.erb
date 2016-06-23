@@ -52,6 +52,13 @@
 
 </br>
 
+<% flash.each do |name, msg| %>
+<div class="errormsg">
+  <%= msg %>
+</div>
+<% end %>
+</br>
+
 <%= yield %>
 
 </body>

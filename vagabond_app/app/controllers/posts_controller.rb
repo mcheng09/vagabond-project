@@ -25,10 +25,11 @@ class PostsController < ApplicationController
 
       redirect_to city_path(city.id)
       else
-       redirect_to new_city_post_path(city[:id])
+       redirect_to new_city_post_path
       end
     else
-      redirect_to new_city_post_path(city[:id])
+      flash[:error] = post.errors.full_messages.join("-----")
+      redirect_to new_city_post_path
     end
 
   end
