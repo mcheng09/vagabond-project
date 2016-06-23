@@ -1,33 +1,35 @@
-
-<h1>Profile Page</h1>
-
-
-<%= image_tag(@user.avatar) %>
-<div>
-  <b>Name:</b>
-  <a href="/users/<%= @user.id %>"><%= @user.first_name %> <%= @user.last_name %></a>
-</div>
+<div class="container">
+  <h3><%= @user.first_name %>'s Profile</h3>
 
 
+  <%= image_tag(@user.avatar) %>
+  <div>
+    <strong>Name: </strong><%= @user.first_name %> <%= @user.last_name %>
+  </div>
 
-<div>
-  <b>Location:</b> <%= @user.location %>
-</div>
 
-<div>
-  <b>User Since:</b> <%= @user.created_at.strftime("%b %d, %Y") %>
-</div>
 
-<div>
- <b>Recent Posts:</b><br>
-    <% @posts.each do |post| %>
-    <label>title: </label><%= post.title %></br>
-    <%= truncate(post.description, :length => 1000) %></br></br>
-  <% end %>
-</div>
+  <div>
+    <b>Location:</b> <%= @user.location %>
+  </div>
 
-<div>
-  <form action='/users/<%= @user.id %>/edit' method='get'>
-          <button> Edit Profile </button>
-  </form>
+  <div>
+    <b>User Since:</b> <%= @user.created_at.strftime("%b %d, %Y") %>
+  </div>
+  <br>
+
+  <div>
+    <form action='/users/<%= @user.id %>/edit' method='get'>
+            <button> Edit Profile </button>
+    </form>
+  </div>
+
+  <div>
+   <b>Recent Posts:</b><br>
+      <% @posts.each do |post| %>
+      <label>title: </label><%= post.title %></br>
+      <%= truncate(post.description, :length => 1000) %></br></br>
+    <% end %>
+  </div>
+
 </div>
