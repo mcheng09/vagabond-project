@@ -1,26 +1,39 @@
 <div class="container">
-  <button class="btn waves-effect waves-light blue darken-3">
-    <%= link_to "Create Post", new_city_post_path(@city[:id]), {style: "color: white"} %>
-    <i class="material-icons right">send</i>
-  </button>
-
-  <h2><%= @city.name %></h2>
-  <h4>Country: </h4><%= @city.country %> </br></br>
-  <h4>Description: </h4><%= @city.description %></br></br>
-
-  <h4>Posts: </h4>
-  <% @posts.each do |post| %>
   <div class="card-panel">
-    <h5><i class="tiny material-icons">message</i><strong><a href="/cities/<%= @city.id %>/posts/<%= post.id %>">  <%= post.title %></h5></a></strong>
-    <i class="tiny material-icons">perm_identity</i><strong><a href="/users/<%= post.user_id %>">  <%= post.user.first_name %> <%= post.user.last_name %></a></strong></br>
-    <%= truncate(post.description, :length => 1000) %></br><a href="/cities/<%= @city.id %>/posts/<%= post.id %>">See more...</a>
+
+    <div class="row">
+      <div class="col l6">
+        <h2><%= @city.name %></h2>
+        <button class="btn waves-effect waves-light indigo accent-3">
+          <%= link_to "Create Post", new_city_post_path(@city[:id]), {style: "color: white"} %>
+          <i class="material-icons right">send</i>
+        </button>
+
+
+        <h5>Country: </h5><%= @city.country %>
+      </div>
+      <div class="col l6">
+        <img class="responsive-img" src="app/assets/images/sf.jpg">
+      </div>
+    </div>
+
+        <h5>Description: </h5><%= @city.description %></br>
+        </br>
+
+
+        <h5>Posts: </h5>
+        <% @posts.each do |post| %>
+        <div class="card-panel">
+          <div class="green">
+            <h4><i class="tiny material-icons white-text">message</i><a href="/cities/<%= @city.id %>/posts/<%= post.id %>" class="button-link">  <%= post.title %></h4></a>
+            <i class="tiny material-icons white-text">perm_identity</i><strong><a href="/users/<%= post.user_id %>" class="button-link">  <%= post.user.first_name %> <%= post.user.last_name %></a></strong></br>
+          </div>
+          <%= truncate(post.description, :length => 1000) %></br><a href="/cities/<%= @city.id %>/posts/<%= post.id %>" class="text-link">See more...</a>
+        </div>
+
+        <% end %>
+
   </div>
-
-  <% end %>
-
-
-
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-
-</div>
