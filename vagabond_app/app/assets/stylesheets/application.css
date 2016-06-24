@@ -28,3 +28,7 @@
 .button-link {
   color: white;
 }
+
+.errormsg {
+  color: green;
+}
