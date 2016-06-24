@@ -1,4 +1,5 @@
-<div class="card-panel">
+<div class="container">
+  <div class="card-panel">
 <%= form_for @post do |f| %>
   <h4 class="card-panel green lighten-1 white-text">Edit Post</h4>
   <div>
@@ -11,7 +12,8 @@
   </div>
 
   <br>
-  <%= f.submit "Update Post" %>
+  <%= f.submit "Update Post", :class => "button" %>
 </div>
 <% end %>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>

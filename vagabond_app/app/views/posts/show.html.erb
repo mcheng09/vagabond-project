@@ -16,13 +16,12 @@
 
   <% if can? :manage, @post %>
 
-    <div>
-      <form action='/posts/<%= @post.id %>/edit' method='get'>
-        <button> Edit Post </button>
-      </form>
+    <div class="button white-text">
+      <a href='/posts/<%= @post.id %>/edit' class="button-link">Edit Post</a>
     </div>
 
-    <%= button_to "Delete Post", city_post_path(@post.city.id, @post.id), method: :delete, :data => {:confirm => @confirm_msg} %>
+    <br>
+    <%= button_to "Delete Post", city_post_path(@post.city.id, @post.id), method: :delete, class: "button", :data => {:confirm => @confirm_msg} %>
 
   </div>
 
