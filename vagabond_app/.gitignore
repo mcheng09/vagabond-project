@@ -12,4 +12,8 @@
 !/log/.keep
 /tmp
 
+.DS_Store
+vagabond_app/.DS_Store
+vagabond_app/public/.DS_Store
+
 secrets.sh
