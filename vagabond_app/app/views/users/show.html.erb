@@ -34,29 +34,6 @@
 
   </div>
 
-  <div>
-    <b>User Since:</b> <%= @user.created_at.strftime("%b %d, %Y") %>
-  </div>
-  <br>
-
-  <% if current_user.id == @user.id %>
-
-  <div>
-    <form action='/users/<%= @user.id %>/edit' method='get'>
-        <button> Edit Profile </button>
-    </form>
-  </div>
-
-  <% end %>
-
-<div>
- <b>Recent Posts:</b><br>
-    <% @posts.each do |post| %>
-    <label>title: </label><%= post.title %></br>
-    <label>Posted in: </label><a href="/cities/<%= post.city_id %>"> <%= post.city.name %></a></br>
-    <%= truncate(post.description, :length => 1000) %></br></br>
-  <% end %>
-</div>
 
 </div>
 

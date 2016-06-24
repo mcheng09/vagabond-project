@@ -1,19 +1,23 @@
-Sign In
+<div class="container">
+  <div class="card-panel">
+    <h2>Sign In</h2>
 
-<%= form_for @user, url: "/sessions", method: "post" do |form| %>
+    <%= form_for @user, url: "/sessions", method: "post" do |form| %>
 
-  <div>
-    <%= form.text_field :email %>
+      <div>
+        <%= form.text_field :email, placeholder: "Email" %>
+      </div>
+      <div>
+        <%= form.password_field :password, placeholder: "Password" %>
+      </div>
+
+      <div>
+        <%= form.submit "Sign In", :class => "button" %>
+      </div>
+
+    <% end %>
   </div>
-  <div>
-    <%= form.password_field :password %>
-  </div>
 
-
-  <div>
-    <%= form.submit "Sign In" %>
-  </div>
-
-<% end %>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
