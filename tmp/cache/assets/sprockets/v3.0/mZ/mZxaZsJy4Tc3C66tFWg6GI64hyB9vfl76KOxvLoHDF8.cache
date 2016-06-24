@@ -1,7 +1,0 @@
-I"E(function() {
-  button({
-    color: white
-  });
-
-}).call(this);
-:ET
