@@ -12,10 +12,13 @@
         <strong>Name: </strong><%= @user.first_name %> <%= @user.last_name %>
       </div>
       <div>
-        <strong>Location:</strong> <%= @user.location %>
+        <strong>Email: </strong> <%= @user.email %>
       </div>
       <div>
-        <strong>User Since:</strong> <%= @user.created_at.strftime("%b %d, %Y") %>
+        <strong>Location: </strong> <%= @user.location %>
+      </div>
+      <div>
+        <strong>User Since: </strong> <%= @user.created_at.strftime("%b %d, %Y") %>
       </div>
       <br>
 
