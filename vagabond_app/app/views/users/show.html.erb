@@ -1,8 +1,10 @@
 <div class="container">
-  <h4><%= @user.first_name %>'s Profile</h4>
+  <div class="card-panel">
+
 
   <div class="row">
     <div class="col l4">
+      <h4><%= @user.first_name %>'s Profile</h4>
       <div class="responsive-img">
         <%= image_tag(@user.avatar, :class => "profile-pic")%></img>
       </div>
@@ -15,13 +17,16 @@
       <div>
         <strong>User Since:</strong> <%= @user.created_at.strftime("%b %d, %Y") %>
       </div>
-      <div>
-        <form action='/users/<%= @user.id %>/edit' method='get'>
-                <button> Edit Profile </button>
-        </form>
-      </div>
+      <br>
+
     </div>
+
     <div class="col l8">
+      <br>
+      <div class="button white-text right">
+        <a href='/users/<%= @user.id %>/edit' class="button-link">Edit Profile</a>
+      </div><br>
+      <br>
      <h5>Recent Posts:</h5>
      <div class="card-panel">
         <% @posts.each do |post| %>
@@ -34,7 +39,7 @@
 
   </div>
 
-
+</div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>

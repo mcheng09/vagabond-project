@@ -14,13 +14,17 @@
  *= require_self
  */
 
-
  .button {
    color: white;
      font-family: 'Roboto', sans-serif;
      font-size: 18px;
+     text-align: center;
    background: #3d5afe;
    border-radius: 2px;
    padding: 5px 20px;
    border: 0px;
+   max-width: 150px;
  }
+.button-link {
+  color: white;
+}
