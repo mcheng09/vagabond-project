@@ -1,16 +1,37 @@
 <div class="container">
-  <h3><%= @user.first_name %>'s Profile</h3>
+  <h4><%= @user.first_name %>'s Profile</h4>
 
+  <div class="row">
+    <div class="col l4">
+      <div class="responsive-img">
+        <%= image_tag(@user.avatar, :class => "profile-pic")%></img>
+      </div>
+      <div>
+        <strong>Name: </strong><%= @user.first_name %> <%= @user.last_name %>
+      </div>
+      <div>
+        <strong>Location:</strong> <%= @user.location %>
+      </div>
+      <div>
+        <strong>User Since:</strong> <%= @user.created_at.strftime("%b %d, %Y") %>
+      </div>
+      <div>
+        <form action='/users/<%= @user.id %>/edit' method='get'>
+                <button> Edit Profile </button>
+        </form>
+      </div>
+    </div>
+    <div class="col l8">
+     <h5>Recent Posts:</h5>
+     <div class="card-panel">
+        <% @posts.each do |post| %>
+        <strong>Title: <%= post.title %></strong></br>
+        <strong>Posted in: </strong><a href="/cities/<%= post.city_id %>"> <%= post.city.name %></a></br>
+        <%= truncate(post.description, :length => 1000) %>
+      <% end %>
+      </div>
+    </div>
 
-  <%= image_tag(@user.avatar) %>
-  <div>
-    <strong>Name: </strong><%= @user.first_name %> <%= @user.last_name %>
-  </div>
-
-
-
-  <div>
-    <b>Location:</b> <%= @user.location %>
   </div>
 
   <div>
@@ -18,11 +39,15 @@
   </div>
   <br>
 
+  <% if current_user.id == @user.id %>
+
   <div>
     <form action='/users/<%= @user.id %>/edit' method='get'>
-            <button> Edit Profile </button>
+        <button> Edit Profile </button>
     </form>
   </div>
+
+  <% end %>
 
 <div>
  <b>Recent Posts:</b><br>
@@ -32,7 +57,6 @@
     <%= truncate(post.description, :length => 1000) %></br></br>
   <% end %>
 </div>
-
 
 </div>
 

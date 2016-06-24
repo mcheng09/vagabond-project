@@ -5,11 +5,11 @@
     <!-- CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
 
     <!-- JAVASCRIPTS -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
 
   </head>
@@ -35,7 +35,6 @@
 
       </div>
     </nav>
-    <br>
 
     <div class="container">
       <div class="row cities">
@@ -60,7 +59,6 @@
       <%= msg %>
     </div>
     <% end %>
-    <br>
 
   <%= yield %>
 

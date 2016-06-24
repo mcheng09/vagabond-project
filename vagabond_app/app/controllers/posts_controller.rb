@@ -49,11 +49,13 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    authorize! :manage, @post
     render :edit
   end
 
   def update
     @post = Post.find(params[:id])
+    authorize! :manage, @post
     @post.update(post_params)
     redirect_to "/posts/#{@post.id}"
   end
@@ -62,6 +64,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    authorize! :manage, @post
     city = City.find(params[:city_id])
     @post.destroy
     flash[:notice] = "'#{@post.title}' post was deleted"
