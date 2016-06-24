@@ -30,10 +30,12 @@
      <h5>Recent Posts:</h5>
      <div class="card-panel">
         <% @posts.each do |post| %>
-        <strong>Title: <%= post.title %></strong></br>
-        <strong>Posted in: </strong><a href="/cities/<%= post.city_id %>"> <%= post.city.name %></a></br>
-        <%= truncate(post.description, :length => 1000) %>
-      <% end %>
+      </br><div class="postcontainer">
+          <strong>Title: <%= post.title %></strong></br>
+          <strong>Posted in: </strong><a href="/cities/<%= post.city_id %>"> <%= post.city.name %></a></br>
+          <%= truncate(post.description, :length => 1000) %> </br><br>
+        </div>
+        <% end %>
       </div>
     </div>
 
