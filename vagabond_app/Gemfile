@@ -24,6 +24,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 # Authorization
 gem 'cancancan'
+# AWS Gem
+gem 'aws-sdk', '~> 2'
 
 
 
