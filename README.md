@@ -3,7 +3,7 @@ Hello there! We are team GitMoney and we'd like to present to you our third proj
 
 Vagabond(name is TBD) is an user-friendly app that can be used to create posts directed to the city that it is referring to. Users have the ability to sign up with an e-mail. Each users has it's own profile page that displays all recent posts made by that person. Users also have the ability to view each city's page to see what other people have posts. Users can visit other users profile and view what posts they may have written.
 
-![alt tag](https://postimg.org/image/ag4oad7on/)
+![alt tag](https://s31.postimg.org/3po70xkiz/Screen_Shot_2016_06_24_at_9_30_08_AM.png)
 
 ### Team GitMoney
 
