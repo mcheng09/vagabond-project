@@ -39,7 +39,7 @@
         <div class="titlelabel">
           <strong><a href="/cities/<%= post.city_id %>/posts/<%= post.id %>"><%= post.title %></a></strong></div>
           <strong>Posted in: </strong><a href="/cities/<%= post.city_id %>"> <%= post.city.name %></a></br></br>
-          <%= truncate(post.description, :length => 1000) %> </br></br>
+          <%= truncate(post.description, :length => 1000) %> <a href="/cities/<%= post.city_id %>/posts/<%= post.id %>">See More...</a></br></br>
           <div class="postingdate">
             <label>Posted on: </label><%= post.created_at.strftime("%b %d, %Y") %></br>
           </div>
