@@ -5,15 +5,16 @@
   </button>
 
   <h2><%= @city.name %></h2>
-  <h5>Country: </h5><%= @city.country %> </br></br>
-  <h5>Description: </h5><%= @city.description %></br></br>
-  <h5>Posts: </h5>
-  <% @posts.each do |post| %>
+  <h4>Country: </h4><%= @city.country %> </br></br>
+  <h4>Description: </h4><%= @city.description %></br></br>
 
-  <i class="tiny material-icons">perm_identity</i><strong><a href="/users/<%= post.user_id %>">  <%= post.user.first_name %> <%= post.user.last_name %></a></strong></br>
-  <i class="tiny material-icons">message</i><strong><a href="/cities/<%= @city.id %>/posts/<%= post.id %>">  <%= post.title %></a></strong></br>
-  <%= truncate(post.description, :length => 1000) %></br><a href="/cities/<%= @city.id %>/posts/<%= post.id %>">See more...</a></br>
-  <br>
+  <h4>Posts: </h4>
+  <% @posts.each do |post| %>
+  <div class="card-panel">
+    <h5><i class="tiny material-icons">message</i><strong><a href="/cities/<%= @city.id %>/posts/<%= post.id %>">  <%= post.title %></h5></a></strong>
+    <i class="tiny material-icons">perm_identity</i><strong><a href="/users/<%= post.user_id %>">  <%= post.user.first_name %> <%= post.user.last_name %></a></strong></br>
+    <%= truncate(post.description, :length => 1000) %></br><a href="/cities/<%= @city.id %>/posts/<%= post.id %>">See more...</a>
+  </div>
 
   <% end %>
 
